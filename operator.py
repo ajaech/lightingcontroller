@@ -104,7 +104,6 @@ class myHandler(BaseHTTPRequestHandler):
     return
 
   def do_POST(self):
-    logging.info('post request received')
     ctype, pdict = parse_header(self.headers['content-type'])
     length = min(int(self.headers['Content-Length']), 40)
     contents = self.rfile.read(length).lower()
